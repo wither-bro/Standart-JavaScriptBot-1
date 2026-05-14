@@ -1,0 +1,22 @@
+{
+  "name": "series-cg-beginner-js",
+  "version": "1.0.0",
+  "description": "Самый мощный обучающий бот на JavaScript от SERIES(CG) Studios",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "learning",
+    "series-cg"
+  ],
+  "author": "SERIES(CG) Studios Student",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "dotenv": "^16.4.5"
+  }
+}
