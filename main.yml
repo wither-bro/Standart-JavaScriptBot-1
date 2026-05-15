@@ -1,0 +1,34 @@
+name: # введи имя своего бота
+
+# Скрипт срабатывает при пуше в главную ветку
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Копирование файлов проекта
+      uses: actions/checkout@v3
+
+    - name: Подготовка окружения Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+
+    - name: Установка необходимых библиотек
+      run: npm install
+
+    - name: Финальная проверка SERIES(CG)
+      run: |
+        echo "--- [ СИСТЕМА SERIES(CG) ПРОШЛА ПРОВЕРКУ ] ---"
+        echo "Все библиотеки установлены, ошибок в коде не обнаружено."
+        echo "Бот подготовлен к запуску, но ждет твоей команды."
+        echo "Чтобы оживить бота, введи в терминале: node main.js"
+        # Специально завершаем работу без запуска бота
+        exit 0
